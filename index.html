@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Meridian Network - Revived</title>
+<meta name="description" content="Garry's Mod Sandbox PvP and build server, rebuilt to play like Meridian and Emperor Network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+<style>
+/* Layout: the EPN store's "Mercury" splash page. Dark nav bar, a centred header box, rows of three icon cards. */
+:root {
+	--bg: #202225;          /* page (EPN: rgb 32,34,37) */
+	--bar: #131515;         /* top nav (EPN: rgb 19,21,21) */
+	--card: #2c2f33;        /* header boxes + cards (EPN: rgb 44,47,51) */
+	--card-hi: #34383d;
+	--text: #fefefe;
+	--muted: #9a9ca0;
+	--head: #c7c7c7;        /* Bebas headings */
+	--accent: #428bca;      /* Meridian blue (scoreboard colour) */
+	--green: #3cb043;
+	--red: #e3232c;
+	--display: "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+	--ui: "Open Sans", "Segoe UI", Arial, sans-serif;
+	--body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 14px; line-height: 1.55; }
+a { color: var(--text); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.bar { background: var(--bar); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bar); }
+.bar-in { max-width: 960px; margin: 0 auto; display: flex; align-items: center; gap: 18px; padding-block: 10px;
+	padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.burger { background: none; border: 0; color: var(--text); font-size: 20px; cursor: pointer; padding: 6px 8px; }
+.logo { width: 52px; height: 52px; background: var(--card); display: grid; place-items: center; }
+.logo svg { width: 38px; height: 38px; }
+.menu { display: flex; gap: 22px; font-family: var(--ui); font-weight: 600; font-size: 15px; }
+.menu a { text-decoration: none; color: var(--muted); }
+.menu a:hover { color: var(--text); }
+@media (max-width: 640px) {
+	.menu { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--bar); flex-direction: column; gap: 0;
+		padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+	.menu.open { display: flex; }
+	.menu a { padding: 12px 0; border-top: 1px solid var(--card); }
+}
+@media (min-width: 641px) { .burger { display: none; } }
+
+main { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 26px; padding-block: 46px 70px;
+	padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.splash { background: var(--card); align-self: center; text-align: center; padding: 14px 40px 18px; width: min(100%, 450px); }
+.splash h1, .splash h2 { font-family: var(--display); font-weight: 400; color: var(--head); margin: 0; letter-spacing: .02em; text-wrap: balance; }
+.splash h1 { font-size: 34px; line-height: 1.1; margin-top: 8px; }
+.splash h2 { font-size: 28px; }
+.splash .status { margin: 6px 0 0; font-family: var(--ui); font-size: 13px; color: var(--muted); }
+.splash .status b { color: var(--green); font-weight: 600; }
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+@media (max-width: 640px) { .cards { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--card); border-radius: 3px; text-align: center; padding: 18px 16px 22px; display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0; }
+.card .ico { font-size: 52px; line-height: 1; height: 56px; display: grid; place-items: center; }
+.card h3 { font-family: var(--ui); font-weight: 700; font-size: 18px; line-height: 1.2; margin: 4px 0 0; text-wrap: balance; }
+.card p { margin: 0; color: #e8e8e8; flex: 1; }
+.card .go { font-family: var(--ui); font-weight: 700; font-size: 14px; text-decoration: none; margin-top: 8px; }
+.card .go:hover { text-decoration: underline; }
+.steam { color: #1b78c8; } .green { color: var(--green); } .red { color: var(--red); } .blue { color: var(--accent); }
+
+.wide { background: var(--card); border-radius: 3px; padding: 20px 22px; }
+.wide ol { margin: 0; padding-left: 26px; display: grid; gap: 7px; color: #e8e8e8; }
+.wide ol li::marker { color: var(--accent); font-family: var(--ui); font-weight: 700; }
+.keys { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 16px; align-items: baseline; margin: 0; }
+.keys dt { font-family: var(--ui); font-weight: 700; font-size: 12px; background: var(--bg); border: 1px solid #44484e; border-bottom-width: 3px; padding: 2px 8px; border-radius: 4px; text-align: center; }
+.keys dd { margin: 0; color: #e8e8e8; }
+
+footer { text-align: center; color: var(--muted); font-size: 12.5px; display: flex; flex-direction: column; gap: 6px; }
+footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 18px; font-family: var(--ui); }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<header class="bar">
+	<div class="bar-in">
+		<button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i class="fas fa-bars"></i></button>
+		<a class="logo" href="#top" aria-label="Meridian Network - Revived home">
+			<svg viewBox="0 0 40 40" aria-hidden="true">
+				<circle cx="20" cy="20" r="16" fill="none" stroke="#428bca" stroke-width="3"/>
+				<ellipse cx="20" cy="20" rx="7" ry="16" fill="none" stroke="#428bca" stroke-width="2.5"/>
+				<line x1="20" y1="4" x2="20" y2="36" stroke="#fefefe" stroke-width="2.5"/>
+				<line x1="5" y1="20" x2="35" y2="20" stroke="#428bca" stroke-width="2"/>
+			</svg>
+		</a>
+		<nav class="menu" id="menu">
+			<a href="#top">Home</a>
+			<a href="#rules">Rules</a>
+			<a href="#controls">Controls</a>
+			<a href="https://discord.gg/tqqPjR2Prx" target="_blank" rel="noopener">Discord</a>
+			<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2833877452" target="_blank" rel="noopener">Workshop</a>
+		</nav>
+	</div>
+</header>
+
+<main id="top">
+	<section class="splash">
+		<h1>Welcome to Meridian Network - Revived</h1>
+		<p class="status">Garry's Mod Sandbox &middot; PvP &amp; Build &middot; gm_bigcity &middot; <b>Beta testing</b></p>
+	</section>
+
+	<section class="cards">
+		<article class="card">
+			<div class="ico steam"><i class="fab fa-steam"></i></div>
+			<h3>Welcome</h3>
+			<p>Meridian Network - Revived brings back the Sandbox PvP and build server you remember. It is rebuilt to play the way Meridian and Emperor Network did. The server is in beta right now, so things can still change. Give us suggestions on our discord!</p>
+			<a class="go" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2833877452" target="_blank" rel="noopener">Click here to take a look at our Workshop collection</a>
+		</article>
+		<article class="card">
+			<div class="ico green"><i class="fas fa-box-archive"></i></div>
+			<h3>The Server</h3>
+			<p>You spawn in PvP. Knife kills pay points per kill, airdrops bring points, knife crates and nukes, and playtime ranks you up. Spend your points in the Pointshop on weapons, player models, crates and jetpacks. Loyals and donators can switch to build mode.</p>
+			<a class="go" href="#rules">Click here to read the rules</a>
+		</article>
+		<article class="card">
+			<div class="ico red"><i class="fas fa-heart"></i></div>
+			<h3>Thank-you</h3>
+			<p>Thanks to everyone who played on Emperor Network and Meridian over the years, and to everyone helping us test the revival. Every bug report gets the server closer to the original. Sincerely, thank-you for coming back.</p>
+			<a class="go" href="https://discord.gg/tqqPjR2Prx" target="_blank" rel="noopener">Click here to join our discord</a>
+		</article>
+	</section>
+
+	<section class="splash"><h2>Frequently Asked Questions</h2></section>
+
+	<section class="cards">
+		<article class="card">
+			<div class="ico green"><i class="fas fa-gamepad"></i></div>
+			<h3>How do I join the server?</h3>
+			<p>The server is in beta. Join our Discord and ask for the Beta Tester role. The server address is posted in #server-ip.</p>
+		</article>
+		<article class="card">
+			<div class="ico blue"><i class="fas fa-download"></i></div>
+			<h3>What do I need to download?</h3>
+			<p>Subscribe to our Workshop collection before you join, or let the game download it when you connect. The first join takes a while because of the model and vehicle packs.</p>
+		</article>
+		<article class="card">
+			<div class="ico red"><i class="fas fa-rotate-left"></i></div>
+			<h3>Do my old items come back?</h3>
+			<p>No. The old Pointshop database is gone, so everyone starts fresh with 15,000 points. Knives come from crates and airdrops, just like before.</p>
+		</article>
+	</section>
+
+	<section class="splash" id="rules"><h2>Server Rules</h2></section>
+	<section class="wide">
+		<ol>
+			<li>No harassment or racism.</li>
+			<li>No spamming chat or mic.</li>
+			<li>No doxxing or DDoSing.</li>
+			<li>No advertising.</li>
+			<li>No cheating or scripting.</li>
+			<li>Spawnkilling is allowed, except with knives or lightsabers. Point farming means an inventory wipe.</li>
+			<li>Don't prop-block other players' bases or spawns.</li>
+			<li>Prop-pushing is allowed, but not from build mode.</li>
+			<li>Donators and Loyals: no killing or stealing airdrops in build, no PvP with !speed or !jumppower, and ask before !goto or !bring.</li>
+			<li>Don't abuse Wiremod or E2 to troll or for a PvP advantage.</li>
+			<li>Lagging or crashing the server is a permanent ban.</li>
+		</ol>
+	</section>
+
+	<section class="splash" id="controls"><h2>Controls</h2></section>
+	<section class="wide">
+		<dl class="keys">
+			<dt>F3</dt><dd>Pointshop: shop, inventory, crates, milestones, gambling</dd>
+			<dt>F6</dt><dd>Select a mode: PvP or build (Loyal and donators)</dd>
+			<dt>F7</dt><dd>Scoreboard and playtime leaderboard (hold TAB to peek)</dd>
+			<dt>JUMP x2</dt><dd>Jetpack: press jump again in the air</dd>
+			<dt>R-SHIFT</dt><dd>Parachute</dd>
+			<dt>X</dt><dd>Go prone</dd>
+			<dt>!fly</dt><dd>Noclip, in build mode only</dd>
+		</dl>
+	</section>
+
+	<footer>
+		<nav>
+			<a href="https://discord.gg/tqqPjR2Prx" target="_blank" rel="noopener">Discord</a>
+			<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2833877452" target="_blank" rel="noopener">Workshop collection</a>
+			<a href="#rules">Rules</a>
+		</nav>
+		<span>Meridian Network - Revived &middot; A fan revival, not affiliated with Valve</span>
+	</footer>
+</main>
+
+<script>
+(function () {
+	var b = document.getElementById("burger"), m = document.getElementById("menu");
+	b.addEventListener("click", function () {
+		var open = m.classList.toggle("open");
+		b.setAttribute("aria-expanded", open ? "true" : "false");
+	});
+	m.addEventListener("click", function (e) { if (e.target.tagName === "A") { m.classList.remove("open"); b.setAttribute("aria-expanded", "false"); } });
+})();
+</script>
+</body>
+</html>
