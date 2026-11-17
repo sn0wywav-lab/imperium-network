@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Meridian Network - Revived</title>
-<meta name="description" content="Garry's Mod Sandbox PvP and build server, rebuilt to play like Meridian and Emperor Network.">
+<title>Imperium Network</title>
+<meta name="description" content="Imperium Network: a Garry's Mod Sandbox PvP and build server, rebuilt to play like Emperor Network and Meridian.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap">
@@ -20,7 +20,7 @@
 	--text: #fefefe;
 	--muted: #9a9ca0;
 	--head: #c7c7c7;        /* Bebas headings */
-	--accent: #428bca;      /* Meridian blue (scoreboard colour) */
+	--accent: #e3232c;      /* EPN red (Emperor -> Imperium) */
 	--green: #3cb043;
 	--red: #e3232c;
 	--display: "Bebas Neue", Impact, "Arial Narrow", sans-serif;
@@ -68,7 +68,7 @@ main { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; 
 .card p { margin: 0; color: #e8e8e8; flex: 1; }
 .card .go { font-family: var(--ui); font-weight: 700; font-size: 14px; text-decoration: none; margin-top: 8px; }
 .card .go:hover { text-decoration: underline; }
-.steam { color: #1b78c8; } .green { color: var(--green); } .red { color: var(--red); } .blue { color: var(--accent); }
+.steam { color: #1b78c8; } .green { color: var(--green); } .red { color: var(--red); } .blue { color: #1b78c8; }
 
 .wide { background: var(--card); border-radius: 3px; padding: 20px 22px; }
 .wide ol { margin: 0; padding-left: 26px; display: grid; gap: 7px; color: #e8e8e8; }
@@ -88,12 +88,11 @@ footer a:hover { color: var(--text); }
 <header class="bar">
 	<div class="bar-in">
 		<button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i class="fas fa-bars"></i></button>
-		<a class="logo" href="#top" aria-label="Meridian Network - Revived home">
+		<a class="logo" href="#top" aria-label="Imperium Network home">
 			<svg viewBox="0 0 40 40" aria-hidden="true">
-				<circle cx="20" cy="20" r="16" fill="none" stroke="#428bca" stroke-width="3"/>
-				<ellipse cx="20" cy="20" rx="7" ry="16" fill="none" stroke="#428bca" stroke-width="2.5"/>
-				<line x1="20" y1="4" x2="20" y2="36" stroke="#fefefe" stroke-width="2.5"/>
-				<line x1="5" y1="20" x2="35" y2="20" stroke="#428bca" stroke-width="2"/>
+				<path d="M6 30 L4 12 L13 20 L20 7 L27 20 L36 12 L34 30 Z" fill="#e3232c"/>
+				<rect x="6" y="31" width="28" height="4" fill="#fefefe"/>
+				<circle cx="20" cy="22" r="2.6" fill="#fefefe"/>
 			</svg>
 		</a>
 		<nav class="menu" id="menu">
@@ -108,7 +107,7 @@ footer a:hover { color: var(--text); }
 
 <main id="top">
 	<section class="splash">
-		<h1>Welcome to Meridian Network - Revived</h1>
+		<h1>Welcome to Imperium Network</h1>
 		<p class="status">Garry's Mod Sandbox &middot; PvP &amp; Build &middot; gm_bigcity &middot; <b>Beta testing</b></p>
 	</section>
 
@@ -116,7 +115,7 @@ footer a:hover { color: var(--text); }
 		<article class="card">
 			<div class="ico steam"><i class="fab fa-steam"></i></div>
 			<h3>Welcome</h3>
-			<p>Meridian Network - Revived brings back the Sandbox PvP and build server you remember. It is rebuilt to play the way Meridian and Emperor Network did. The server is in beta right now, so things can still change. Give us suggestions on our discord!</p>
+			<p>Imperium Network brings back the Sandbox PvP and build server you remember. It is rebuilt to play the way Emperor Network and Meridian did. The server is in beta right now, so things can still change. Give us suggestions on our discord!</p>
 			<a class="go" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2833877452" target="_blank" rel="noopener">Click here to take a look at our Workshop collection</a>
 		</article>
 		<article class="card">
@@ -128,7 +127,7 @@ footer a:hover { color: var(--text); }
 		<article class="card">
 			<div class="ico red"><i class="fas fa-heart"></i></div>
 			<h3>Thank-you</h3>
-			<p>Thanks to everyone who played on Emperor Network and Meridian over the years, and to everyone helping us test the revival. Every bug report gets the server closer to the original. Sincerely, thank-you for coming back.</p>
+			<p>Thanks to everyone who played on Emperor Network and Meridian over the years, and to everyone helping us test Imperium. Every bug report gets the server closer to the original. Sincerely, thank-you for coming back.</p>
 			<a class="go" href="https://discord.gg/tqqPjR2Prx" target="_blank" rel="noopener">Click here to join our discord</a>
 		</article>
 	</section>
@@ -189,7 +188,7 @@ footer a:hover { color: var(--text); }
 			<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2833877452" target="_blank" rel="noopener">Workshop collection</a>
 			<a href="#rules">Rules</a>
 		</nav>
-		<span>Meridian Network - Revived &middot; A fan revival, not affiliated with Valve</span>
+		<span>Imperium Network &middot; A fan revival of Emperor Network and Meridian, not affiliated with Valve</span>
 	</footer>
 </main>
 
