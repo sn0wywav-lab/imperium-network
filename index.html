@@ -119,7 +119,7 @@ footer a:hover { color: var(--text); }
 <main id="top">
 	<section class="splash">
 		<h1>Welcome to Imperium Network</h1>
-		<p class="status">Garry's Mod Sandbox &middot; PvP &amp; Build &middot; gm_bigcity &middot; <b>Beta testing</b></p>
+		<p class="status">Garry's Mod Sandbox &middot; PvP &amp; Build &middot; gm_bigcity_meridian_v1 &middot; <b>Beta testing</b></p>
 	</section>
 
 	<section class="cards">
@@ -132,7 +132,7 @@ footer a:hover { color: var(--text); }
 		<article class="card">
 			<div class="ico green"><i class="fas fa-box-archive"></i></div>
 			<h3>The Server</h3>
-			<p>You spawn in PvP. Knife kills pay points per kill, airdrops bring points, knife crates and nukes, and playtime ranks you up. Spend your points in the Pointshop on weapons, player models, crates and jetpacks. Loyals and donators can switch to build mode.</p>
+			<p>You spawn in PvP on Meridian's own Big City. Points come from airdrops, milestones, knife kills, killstreaks, gambling and playtime. Spend them in the Pointshop on weapons, player models, crates and jetpacks, or trade with other players. Every hour the server votes on an event: Juggernaut or Mayhem. Play 2 weeks to become Loyal; Loyals and donators can switch to build mode.</p>
 			<a class="go" href="#rules">Click here to read the rules</a>
 		</article>
 		<article class="card">
@@ -161,6 +161,16 @@ footer a:hover { color: var(--text); }
 			<h3>Do my old items come back?</h3>
 			<p>No. Everyone starts fresh with 120,000 points, the same starting balance Meridian gave. Knives come from crates and airdrops, just like before.</p>
 		</article>
+		<article class="card">
+			<div class="ico green"><i class="fas fa-right-left"></i></div>
+			<h3>How do I trade?</h3>
+			<p>Press F9 or type !trade, or open your Pointshop inventory and pick Trade Request. Any item can be traded, plus points. Unequip an item first to offer it. Both players tick ready, then Make Trade.</p>
+		</article>
+		<article class="card">
+			<div class="ico blue"><i class="fas fa-clock"></i></div>
+			<h3>How do ranks work?</h3>
+			<p>Playtime ranks you up automatically, from Newbie to Member at 4 hours (full Wiremod access) and on to The Cron God and Deboreka. Loyal takes 2 weeks of playtime and unlocks build mode, fly, PAC3, E2 and the Loyal shop items.</p>
+		</article>
 	</section>
 
 	<section class="splash" id="rules"><h2>Server Rules</h2></section>
@@ -184,9 +194,10 @@ footer a:hover { color: var(--text); }
 	<section class="wide">
 		<dl class="keys">
 			<dt>F3</dt><dd>Pointshop: shop, inventory, crates, milestones, gambling</dd>
+			<dt>F9</dt><dd>Trade with another player (or !trade)</dd>
 			<dt>F6</dt><dd>Select a mode: PvP or build (Loyal and donators)</dd>
 			<dt>F7</dt><dd>Scoreboard and playtime leaderboard (hold TAB to peek)</dd>
-			<dt>JUMP x2</dt><dd>Jetpack: press jump again in the air</dd>
+			<dt>JUMP</dt><dd>Jetpack: press jump again in the air (!jet to change key and mode)</dd>
 			<dt>CTRL</dt><dd>Parachute (in the air)</dd>
 			<dt>X</dt><dd>Go prone</dd>
 			<dt>!fly</dt><dd>Noclip, in build mode only</dd>
@@ -195,6 +206,8 @@ footer a:hover { color: var(--text); }
 			<dt>!tasks</dt><dd>See which rewards you have claimed</dd>
 			<dt>!menu</dt><dd>The commands your rank can use</dd>
 			<dt>!ssp / !rsp</dt><dd>Set or remove your spawn point</dd>
+			<dt>/nextevent</dt><dd>Time until the next event vote</dd>
+			<dt>!workshop</dt><dd>Open the Workshop collection</dd>
 		</dl>
 	</section>
 
@@ -204,16 +217,16 @@ footer a:hover { color: var(--text); }
 		<ul class="perks">
 			<li>Buildmode &amp; Fly!</li>
 			<li>Donor Exclusive Commands</li>
-			<li>Your own chat tag, PAC3 and E2</li>
+			<li>A custom chat tag (set by staff), PAC3 and E2</li>
 			<li>Increased limits (Props, Ragdolls, Vehicles, Etc)</li>
 			<li>Gold Crates and Gold Keys in the Pointshop</li>
 		</ul>
 	</section>
 	<section class="cards ranks">
-		<article class="card"><h3 class="r-silver">Silver</h3><p>Build mode and fly, !speed and !jumppower, double limits, PAC3, E2, physgun reload, your own chat tag (!tag) and the rank-only shop items.</p><span class="price">$5</span><span class="go soon" data-rank="silver" data-package="7819459">Store opening soon</span></article>
-		<article class="card"><h3 class="r-gold">Gold</h3><p>Everything in Silver, plus the M9K Specialties weapons in the Q menu.</p><span class="price">$10</span><span class="go soon" data-rank="gold" data-package="7819491">Store opening soon</span></article>
+		<article class="card"><h3 class="r-silver">Silver</h3><p>Build mode and fly, !speed and !jumppower, double limits, PAC3, E2, physgun reload, a custom chat tag (set by staff) and the rank-only shop items.</p><span class="price">$5</span><span class="go soon" data-rank="silver" data-package="7819459">Store opening soon</span></article>
+		<article class="card"><h3 class="r-gold">Gold</h3><p>Everything in Silver, plus the M9K Donator weapons in the Q menu (nerve gas, nitro, proximity mine, sticky grenade, suicide bomb).</p><span class="price">$10</span><span class="go soon" data-rank="gold" data-package="7819491">Store opening soon</span></article>
 		<article class="card"><h3 class="r-diamond">Diamond</h3><p>Everything in Gold, plus the Diamond weapons: M4 Guitar, TMP Dragon, Bowcaster and Bolter Minigun.</p><span class="price">$20</span><span class="go soon" data-rank="diamond" data-package="7819493">Store opening soon</span></article>
-		<article class="card"><h3 class="r-imperium">Imperium</h3><p>The top rank. Everything in Diamond, plus the Imperium weapons (Golden L96, M4A1 Beast) and !hp.</p><span class="price">$40</span><span class="go soon" data-rank="imperium" data-package="7819495">Store opening soon</span></article>
+		<article class="card"><h3 class="r-imperium">Imperium</h3><p>The top rank. Everything in Diamond, plus the Imperium weapons (Golden L96, Golden AK, M4A1 Beast) and !hp.</p><span class="price">$40</span><span class="go soon" data-rank="imperium" data-package="7819495">Store opening soon</span></article>
 		<article class="card"><h3 class="r-founder">Founder</h3><p>Everything in Gold with its own Founder tag. Only sold for a limited time to the people who back us early.</p><span class="price">$15 &middot; limited time</span><span class="go soon" data-rank="founder" data-package="7819497">Store opening soon</span></article>
 		<article class="card"><h3>Questions?</h3><p>The store opens soon. Ranks are delivered in game automatically after payment (join the server if you were offline). Problems? Ask in our Discord.</p><a class="go" href="https://discord.gg/tqqPjR2Prx" target="_blank" rel="noopener">Ask on Discord</a></article>
 	</section>
